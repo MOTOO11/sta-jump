@@ -46,7 +46,6 @@
     "typescript-formatter": "^0.1.4"
   },
   "license": "MIT",
-  "main": "index.html",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
