@@ -52,5 +52,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsfmt": "./node_modules/.bin/tsfmt -r src/typescript/Application.ts src/typescript/character.ts src/typescript/action.ts src/typescript/condition.ts src/typescript/scene.ts src/typescript/storage.ts src/typescript/boot.ts src/typescript/util.ts src/typescript/tween.ts",
     "tslint": "gulp ts:lint"
+  },
+  "dependencies": {
+    "express": "^4.12.3"
   }
 }
