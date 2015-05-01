@@ -5,7 +5,7 @@ class Application {
   "use strict";
   game: Phaser.Game;
   constructor(width: number, height: number, targetId: string) {
-    this.game = new Phaser.Game(width, height, Phaser.AUTO, targetId, null, true);
+    this.game = new Phaser.Game(width, height, Phaser.AUTO, targetId, null, false);
     this.game.state.add("boot", boot.bootState, false);
     this.game.state.add("main", main.MainState, false);
     this.game.state.start("boot");
