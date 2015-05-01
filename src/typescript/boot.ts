@@ -2,7 +2,7 @@
 module boot {
   export class bootState extends Phaser.State {
     preload() {
-      //this.game.load.json("staMap", "js/sta.json");
+      // this.game.load.json("staMap", "js/sta.json");
     }
     create() {
       this.stage.backgroundColor = "#ffffff";
