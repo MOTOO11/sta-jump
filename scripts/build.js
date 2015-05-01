@@ -7,6 +7,7 @@ var __extends = this.__extends || function (d, b) {
 /// <reference path="../../typings/bundle.d.ts"/>
 var character;
 (function (character) {
+    "use strict";
     var Stachoo = (function (_super) {
         __extends(Stachoo, _super);
         function Stachoo(game, x, y, main, key, frame) {
@@ -41,7 +42,7 @@ var character;
                 stachoo.body.velocity.y = stachoo.jumpPower * 2;
                 stachoo.isJumping = true;
                 stachoo.powerTween.stop();
-                stachoo.game.input.onUp.remove(stachoo.jump, stachoo.game);
+                stachoo.game.input.onUp.removeAll();
             };
         };
         return Stachoo;
@@ -91,6 +92,7 @@ var main;
         MainState.prototype.preload = function () {
             this.game.load.image("stachoo", "images/stamp/stamp042.png");
             this.game.load.image("ninja", "images/ninja.png");
+            this.game.load.image("sta", "images/sta.png");
             this.game.load.image("pole", "images/pole.png");
             this.game.load.image("powerbar", "images/powerbar.png");
         };
@@ -103,7 +105,7 @@ var main;
             this.scoreText = this.game.add.text(10, 10, "-", { font: "bold 16px 'Hiragino Kaku Gothic ProN'" });
             this.updateScore();
             this.game.physics.startSystem(Phaser.Physics.ARCADE);
-            this.stachoo = new character.Stachoo(this.game, 80, 0, this, "ninja");
+            this.stachoo = new character.Stachoo(this.game, 80, 0, this, "sta");
             this.addPole(80);
         };
         MainState.prototype.update = function () {
