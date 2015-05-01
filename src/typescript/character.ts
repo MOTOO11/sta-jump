@@ -43,7 +43,8 @@ module character {
         stachoo.body.velocity.y = stachoo.jumpPower * 2;
         stachoo.isJumping = true;
         stachoo.powerTween.stop();
-        stachoo.game.input.onUp.remove(stachoo.jump, stachoo.game);
+        stachoo.game.input.onUp.removeAll();
+        //stachoo.game.input.onUp.remove(stachoo.jump, stachoo.game);
       }
     }
   }

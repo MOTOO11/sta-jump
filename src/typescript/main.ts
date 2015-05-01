@@ -17,6 +17,7 @@ module main {
     preload() {
       this.game.load.image("stachoo", "images/stamp/stamp042.png");
       this.game.load.image("ninja", "images/ninja.png");
+      this.game.load.image("sta", "images/sta.png");
       this.game.load.image("pole", "images/pole.png");
       this.game.load.image("powerbar", "images/powerbar.png");
     }
@@ -31,7 +32,7 @@ module main {
       this.updateScore();
 
       this.game.physics.startSystem(Phaser.Physics.ARCADE);
-      this.stachoo = new character.Stachoo(this.game, 80, 0, this, "ninja");
+      this.stachoo = new character.Stachoo(this.game, 80, 0, this, "sta");
       this.addPole(80);
     }
 
