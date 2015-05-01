@@ -53,6 +53,8 @@
     "tslint": "gulp ts:lint"
   },
   "dependencies": {
-    "express": "^4.12.3"
+    "basic-auth-connect": "^1.0.0",
+    "connect": "^3.3.5",
+    "serve-static": "^1.9.2"
   }
 }
