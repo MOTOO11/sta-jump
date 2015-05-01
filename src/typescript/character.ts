@@ -1,5 +1,6 @@
 /// <reference path="../../typings/bundle.d.ts"/>
 module character {
+  "use strict";
   export class Stachoo extends Phaser.Sprite {
     gravity: number = 800;
     jumpPower: number;

@@ -25,7 +25,7 @@ module main {
       this.placedPoles = 0;
       this.poleGroup = this.game.add.group();
       this.score = 0;
-      this.topScore = localStorage.getItem("topJumpScore") == null ? 0 : localStorage.getItem("topJumpScore");
+      this.topScore = localStorage.getItem("topJumpScore") === null ? 0 : <number>localStorage.getItem("topJumpScore");
 
       this.scoreText = this.game.add.text(10, 10, "-", { font: "bold 16px 'Hiragino Kaku Gothic ProN'" });
       this.updateScore();
