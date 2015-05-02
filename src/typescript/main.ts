@@ -32,6 +32,9 @@ module main {
       this.game.physics.startSystem(Phaser.Physics.ARCADE);
       this.stachoo = new character.Stachoo(this.game, 80, 0, this, "sta");
       this.addPole(80);
+      this.game.input.keyboard.addKey(Phaser.Keyboard.R).onDown.add(()=>{
+        this.die();
+      });
     }
 
     update() {
@@ -66,7 +69,7 @@ module main {
     }
     die() {
       localStorage.setItem("topJumpScore", Math.max(this.topScore, this.score).toString());
-      this.game.state.start("main",true);
+      this.game.state.start("main",true),true;
     }
     checkLanding(stachoo: character.Stachoo, pole: character.Pole) {
       if (pole.y >= stachoo.y + stachoo.height / 2) {

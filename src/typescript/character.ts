@@ -5,16 +5,16 @@ module character {
     gravity: number = 800;
     jumpPower: number;
     isJumping: boolean = false;
-    isFallingDown: boolean = false;
+    isFallingDown:boolean = false;
     lastPole: number;
-    // sprite: Phaser.Sprite;
     powerBar: Phaser.Sprite;
     powerTween: Phaser.Tween;
     mainState: main.MainState;
 
     constructor(game: Phaser.Game, x: number, y: number, main: main.MainState, key?: string|Phaser.RenderTexture|Phaser.BitmapData|PIXI.Texture, frame?: string|number) {
       super(game, x, y, key, frame);
-      //      this.sprite = game.add.sprite(80,0,"ninja");
+      this.isJumping=false;
+      this.isFallingDown=false;
       this.mainState = main;
       game.physics.enable(this, Phaser.Physics.ARCADE);
       this.anchor.set(0.5);
