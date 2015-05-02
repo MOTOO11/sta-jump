@@ -15,8 +15,6 @@ module main {
     maxPoleGap: number = 300;
     mainState: MainState;
     preload() {
-      this.game.load.image("stachoo", "images/stamp/stamp042.png");
-      this.game.load.image("ninja", "images/ninja.png");
       this.game.load.image("sta", "images/sta.png");
       this.game.load.image("pole", "images/pole.png");
       this.game.load.image("powerbar", "images/powerbar.png");
@@ -58,7 +56,7 @@ module main {
     addPole(poleX: number) {
       if (poleX < this.game.width * 2) {
         this.placedPoles++;
-        var pole = new character.Pole(this.game, poleX, this.game.rnd.between(250, 380), this.stachoo, this);
+        var pole = new character.Pole(this.game, poleX, this.game.rnd.between(250, 380), this);
         this.game.add.existing(pole);
         pole.anchor.set(0.5, 0);
         this.poleGroup.add(pole);
@@ -74,7 +72,7 @@ module main {
       if (pole.y >= stachoo.y + stachoo.height / 2) {
         var border = stachoo.x - pole.x;
         if (Math.abs(border) > 30) {
-          stachoo.body.velocity.x = border * 2;
+          stachoo.body.velocity.x = border * 3;
           stachoo.body.velocity.y = -200;
         }
         var poleDiff = pole.poleNumber - stachoo.lastPole;

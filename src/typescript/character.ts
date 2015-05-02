@@ -50,11 +50,9 @@ module character {
   }
   export class Pole extends Phaser.Sprite {
     poleNumber: number;
-    stachoo: Stachoo;
     mainState: main.MainState;
-    constructor(game: Phaser.Game, x: number, y: number, stachoo: Stachoo, mainState: main.MainState, key?: string|Phaser.RenderTexture|Phaser.BitmapData|PIXI.Texture, frame?: string|number) {
+    constructor(game: Phaser.Game, x: number, y: number, mainState: main.MainState, key?: string|Phaser.RenderTexture|Phaser.BitmapData|PIXI.Texture, frame?: string|number) {
       super(game, x, y, key, frame);
-      this.stachoo = stachoo;
       this.mainState = mainState;
       Phaser.Sprite.call(this, game, x, y, "pole");
       game.physics.enable(this, Phaser.Physics.ARCADE);
@@ -62,8 +60,9 @@ module character {
       this.poleNumber = mainState.placedPoles;
     }
     update() {
-      if (this.stachoo.isJumping && !this.stachoo.isFallingDown) {
-        this.body.velocity.x = this.stachoo.jumpPower;
+      var stachoo = this.mainState.stachoo;
+      if (stachoo.isJumping && !stachoo.isFallingDown) {
+        this.body.velocity.x = stachoo.jumpPower;
       } else {
         this.body.velocity.x = 0
       }
