@@ -66,7 +66,7 @@ module main {
     }
     die() {
       localStorage.setItem("topJumpScore", Math.max(this.topScore, this.score).toString());
-      this.game.state.start("main");
+      this.game.state.start("main",true);
     }
     checkLanding(stachoo: character.Stachoo, pole: character.Pole) {
       if (pole.y >= stachoo.y + stachoo.height / 2) {
