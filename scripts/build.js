@@ -15,6 +15,8 @@ var character;
             this.gravity = 800;
             this.isJumping = false;
             this.isFallingDown = false;
+            this.isJumping = false;
+            this.isFallingDown = false;
             this.mainState = main;
             game.physics.enable(this, Phaser.Physics.ARCADE);
             this.anchor.set(0.5);
@@ -95,6 +97,7 @@ var main;
             this.game.load.image("powerbar", "images/powerbar.png");
         };
         MainState.prototype.create = function () {
+            var _this = this;
             this.game.stage.backgroundColor = "#87CEEB";
             this.placedPoles = 0;
             this.poleGroup = this.game.add.group();
@@ -105,6 +108,9 @@ var main;
             this.game.physics.startSystem(Phaser.Physics.ARCADE);
             this.stachoo = new character.Stachoo(this.game, 80, 0, this, "sta");
             this.addPole(80);
+            this.game.input.keyboard.addKey(Phaser.Keyboard.R).onDown.add(function () {
+                _this.die();
+            });
         };
         MainState.prototype.update = function () {
             this.game.physics.arcade.collide(this.stachoo, this.poleGroup, this.checkLanding);
@@ -136,7 +142,7 @@ var main;
         };
         MainState.prototype.die = function () {
             localStorage.setItem("topJumpScore", Math.max(this.topScore, this.score).toString());
-            this.game.state.start("main", true);
+            this.game.state.start("main", true), true;
         };
         MainState.prototype.checkLanding = function (stachoo, pole) {
             if (pole.y >= stachoo.y + stachoo.height / 2) {
