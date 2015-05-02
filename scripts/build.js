@@ -136,7 +136,7 @@ var main;
         };
         MainState.prototype.die = function () {
             localStorage.setItem("topJumpScore", Math.max(this.topScore, this.score).toString());
-            this.game.state.start("main");
+            this.game.state.start("main", true);
         };
         MainState.prototype.checkLanding = function (stachoo, pole) {
             if (pole.y >= stachoo.y + stachoo.height / 2) {
