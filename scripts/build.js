@@ -215,11 +215,6 @@ window.onload = function () {
     var main = new Application(640, 480, "canvas");
     console.log("This id is '" + main.game.id + "'!");
 };
-var Global = (function () {
-    function Global() {
-    }
-    return Global;
-})();
 /// <reference path="../../typings/bundle.d.ts"/>
 /// <reference path="./application.ts"/>
 /// <reference path="./boot.ts" />
