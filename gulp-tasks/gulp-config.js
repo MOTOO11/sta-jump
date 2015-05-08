@@ -16,6 +16,8 @@ var DST = function (p) {
 };
 
 module.exports = {
+  DST_DIR:DST_DIR,
+  SRC_DIR:SRC_DIR,
   vendor : {
     dst : {
       scripts : DST('vendor/scripts/'),
