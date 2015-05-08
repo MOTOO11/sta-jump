@@ -22,6 +22,8 @@ gulp.task 'init',['bower:init', 'ts','less','static']
 
 gulp.task 'default',['watch','webserver']
 
+gulp.task 'build',['ts','less','static','html','css','js','images','sounds']
+
 gulp.task 'watch', ()->
 #  runSequence ['ts','less','static'],'webserver'
   runSequence ['ts','less','static']
