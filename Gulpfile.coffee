@@ -37,3 +37,7 @@ gulp.task 'watch', ()->
 
 gulp.task 'watch:ts', ['webserver'] ,->
   gulp.watch './src/ts/*.ts', ['ts']
+
+gulp.task 'deploy', ->
+  gulp.src config.DST_DIR + '/**/*'
+  .pipe $.ghPages()
