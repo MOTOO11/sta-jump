@@ -15,7 +15,7 @@ gulp.task 'clean', ->
       $.util.log "clean build directory."
 
 gulp.task 'webserver',->
-  gulp.src(['build','src'])
+  gulp.src('build')
     .pipe $.webserver({livereload:true,open:true})
 
 gulp.task 'init',['bower:init', 'ts','less','static']
